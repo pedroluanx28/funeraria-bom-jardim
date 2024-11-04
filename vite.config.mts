@@ -10,7 +10,7 @@ export default defineConfig({
         alias: [
             {
                 find: "@",
-                replacement: path.resolve(__dirname, "./src"),
+                replacement: path.resolve(__dirname, "./src/app"),
             },
             {
                 // this is necessary for SCSS modules
