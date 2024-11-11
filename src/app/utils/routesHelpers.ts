@@ -1,9 +1,10 @@
 export function getCurrentUrl(pathname: string) {
-    return pathname.split(/[?#]/)[0];
+    return `/${pathname.split("/")[1]}`;
 }
 
 export function checkIsActive(pathname: string, url: string) {
     const current = getCurrentUrl(pathname);
+
     if (!current || !url) {
         return false;
     }

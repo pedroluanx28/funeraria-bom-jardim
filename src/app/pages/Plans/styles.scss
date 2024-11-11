@@ -1,0 +1,27 @@
+.plans-container {
+    position: relative;
+    height: 23.75rem;
+}
+
+.plans-background {
+    position: absolute;
+    width: 100%;
+    height: 23.75rem;
+    top: 0;
+    z-index: -1;
+}
+
+.page-title {
+    padding-top: 5rem;
+}
+
+#plans-table-container {
+    thead > tr > th {
+        color: var(--purple) !important;
+    }
+
+    tr > td,
+    th {
+        font-weight: bold;
+    }
+}

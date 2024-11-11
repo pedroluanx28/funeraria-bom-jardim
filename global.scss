@@ -2,6 +2,13 @@ $darkBlue: #010822;
 $dark: #1c1c22;
 $purple: #1c49ff;
 $lightPurple: #4d6ef3;
+$gray: #ececee;
+$lightGray: #f6f6f687;
+$oceanBlue: #008ffb;
+
+:root {
+    --purple: #1c49ff;
+}
 
 * {
     margin: 0;
@@ -21,6 +28,18 @@ $lightPurple: #4d6ef3;
 
 .text-purple {
     color: $purple;
+}
+
+.text-light-purple {
+    color: $lightPurple;
+}
+
+.bg-gray {
+    background-color: $gray;
+}
+
+.bg-light-gray {
+    background-color: $lightGray;
 }
 
 // fonts
@@ -64,6 +83,10 @@ $lightPurple: #4d6ef3;
     font-size: 0.9rem;
 }
 
+.fs-1rem {
+    font-size: 0.78rem;
+}
+
 // buttons
 .btn-bg-light-purple-text-light {
     background-color: $lightPurple !important;
@@ -85,14 +108,61 @@ $lightPurple: #4d6ef3;
     }
 }
 
+.btn-bg-ocean-blue-text-light {
+    background-color: $oceanBlue !important;
+    color: white !important;
+
+    &:hover {
+        background-color: darken($oceanBlue, 10%) !important;
+        color: white !important;
+    }
+}
+
 // spaces
 .mt-5rem {
     margin-top: 5rem;
 }
 
+.px-6rem {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.mb-6 {
+    margin-bottom: 3.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 6rem;
+}
+
+.pt-6 {
+    padding-top: 4rem;
+}
+
 // sizes
 .h-20 {
     height: 20%;
+}
+
+.h-17-5rem {
+    height: 17.5rem;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.min-h-100vh {
+    min-height: 100vh;
+}
+
+.w-35rem {
+    width: 35rem;
+}
+
+.w-4rem {
+    width: 4rem;
 }
 
 // others
@@ -111,4 +181,37 @@ $lightPurple: #4d6ef3;
 
 .default-link-active {
     color: $purple;
+}
+
+.card-shadow {
+    box-shadow: 0 0 16px rgba(77, 110, 243, 0.141);
+}
+
+.z-index-negative {
+    z-index: -1;
+}
+
+.border-light-purple {
+    border: 0.37rem solid $lightPurple;
+}
+
+.rounded-md {
+    border-radius: 0.7rem;
+}
+
+.w-1px {
+    width: 1px;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+tr > td,
+th {
+    padding: 1rem !important;
+}
+
+.gray-button {
+    background-color: #e1e3ea !important;
 }
