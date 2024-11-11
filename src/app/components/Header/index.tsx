@@ -39,7 +39,7 @@ export function Header() {
         >
             <div className="d-flex align-items-center gap-4">
                 <img
-                    src="/logo.png"
+                    src="./logo.png"
                     alt="Logo"
                     className="logo"
                     style={{ width: isMobile ? "6rem" : "8rem" }}
@@ -47,7 +47,7 @@ export function Header() {
 
                 {!isMobile && (
                     <>
-                        <HeaderItem title="Home" to="/" />
+                        <HeaderItem title="Home" to="/home" />
                         <HeaderItem title="Produtos" to="/produtos" />
                         <HeaderItem title="Planos" to="/planos" />
                         <HeaderItem

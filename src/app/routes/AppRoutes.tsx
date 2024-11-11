@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { OnlineFuneralRoutes } from "./OnlineFuneralRoutes";
 
@@ -10,9 +10,10 @@ import { ConfigurationRoutes } from "./ConfigurationRoutes";
 
 export function AppRoutes() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/funeraria-bom-jardim">
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/produtos" element={<Contact />} />
                 <Route path="/planos" element={<Plans />} />
                 <Route
@@ -20,7 +21,7 @@ export function AppRoutes() {
                     element={<OnlineFuneralRoutes />}
                 />
                 <Route
-                    path="gerenciamento/*"
+                    path="/gerenciamento/*"
                     element={<ConfigurationRoutes />}
                 />
                 <Route path="/login" element={<Login />} />
