@@ -17,4 +17,5 @@ export default defineConfig({
             },
         ],
     },
+    base: "/funeraria-bom-jardim",
 });
