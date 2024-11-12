@@ -1,6 +1,10 @@
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+
+import Swal from "sweetalert2";
+
 import Modal from "react-bootstrap/Modal";
 import { FormattedInput } from "../Formattedinput";
-import { Link } from "react-router-dom";
 
 type ModalProps = {
     show: boolean;
@@ -8,6 +12,27 @@ type ModalProps = {
 };
 
 export function OnlineFuneralPassword({ show, handleClose }: ModalProps) {
+    const navigate = useNavigate();
+
+    const formik = useFormik({
+        initialValues: {
+            password: "",
+        },
+        onSubmit: (values) => {
+            if (values.password === "1234") {
+                navigate("sala-01");
+
+                return;
+            }
+
+            Swal.fire({
+                icon: "error",
+                title: "Senha inválida",
+                text: "Por favor, insira a senha correta para acessar a sala.",
+            });
+        },
+    });
+
     return (
         <Modal show={show} onHide={handleClose} centered>
             <Modal.Body className="text-center px-5 py-4">
@@ -21,18 +46,21 @@ export function OnlineFuneralPassword({ show, handleClose }: ModalProps) {
                     família para entrar na sala e prestar sua homenagem.
                 </p>
 
-                <FormattedInput
-                    type="password"
-                    placeholder="Senha da sala"
-                    className="mb-4"
-                />
+                <form onSubmit={formik.handleSubmit}>
+                    <FormattedInput
+                        type="password"
+                        placeholder="Senha da sala"
+                        className="mb-4"
+                        {...formik.getFieldProps("password")}
+                    />
 
-                <Link
-                    className="btn btn-bg-purple-text-light px-4 py-2"
-                    to="sala-01"
-                >
-                    Entrar na sala
-                </Link>
+                    <button
+                        className="btn btn-bg-purple-text-light px-4 py-2"
+                        type="submit"
+                    >
+                        Entrar na sala
+                    </button>
+                </form>
             </Modal.Body>
         </Modal>
     );

@@ -7,7 +7,7 @@ type CardProps = {
 
 export function Card({ icon, title, description, buttonText }: CardProps) {
     return (
-        <div className="rounded px-3 py-4 d-flex flex-column align-items-center justify-content-between text-center card-shadow">
+        <div className="rounded px-3 py-4 d-flex flex-column align-items-center justify-content-between text-center card-shadow bg-white">
             <img src={icon} alt="ìcone do card" className="m-2 h-20" />
 
             <h5 className="fw-bold">{title}</h5>

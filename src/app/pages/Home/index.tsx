@@ -1,21 +1,33 @@
+import { useState } from "react";
+
 import { isMobile } from "react-device-detect";
+import { useNavigate } from "react-router-dom";
 import classNames from "clsx";
 
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { addresses } from "@/utils/addresses";
+
 import { Card } from "@/components/Card";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Gallery } from "@/components/Gallery";
 import { BenefitCard } from "@/components/BenefitCard";
 import { ServicesCard } from "@/components/ServicesCard";
 import { FormattedInput } from "@/components/Formattedinput";
 
 import "./styles.scss";
-import { Gallery } from "@/components/Gallery";
-import { Footer } from "@/components/Footer";
 
 export function Home() {
+    const [seeAllAddress, setSeeAllAddress] = useState(false);
+    const [search, setSearch] = useState("");
+
+    const navigate = useNavigate();
+
+    const limitedAddresses = seeAllAddress ? addresses : addresses.slice(0, 8);
+
     const backgroundContainerStyle = {
         backgroundImage: `url(${
             isMobile ? "./mobile-background.png" : "./background.png"
@@ -30,7 +42,7 @@ export function Home() {
             >
                 <Header />
 
-                <div className="h-100 d-flex flex-column align-items-start mt-5rem ps-5">
+                <div className="h-100 d-flex flex-column align-items-start mt-8-5rem ps-5">
                     <h1 className="text-purple">Velório online</h1>
 
                     <p className="text-dark">
@@ -43,7 +55,10 @@ export function Home() {
                         enlutada.
                     </p>
 
-                    <Button className="btn-bg-purple-text-light px-5 py-2">
+                    <Button
+                        className="btn-bg-purple-text-light px-5 py-2"
+                        onClick={() => navigate("/velorio-online")}
+                    >
                         Saiba mais
                     </Button>
                 </div>
@@ -98,34 +113,26 @@ export function Home() {
 
                 <div className="d-flex align-items-center justify-content-evenly px-5">
                     <img
-                        src="./test.png"
+                        src="./office.png"
                         alt="Bom jardim office"
-                        className="w-35rem"
+                        className="w-31rem"
                     />
 
-                    <div className="text-start w-35rem">
-                        <h3>Lorem ipsum</h3>
+                    <div className="text-start w-31rem">
+                        <h3>Missão de cuidado</h3>
 
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Aliquam lectus nisi, consequat sit amet mauris
-                            vitae, malesuada finibus augue. Donec imperdiet nunc
-                            nisi, nec feugiat ipsum sollicitudin non. Nulla in
-                            faucibus sapien, sed sodales nibh. In et vestibulum
-                            metus. Vivamus mollis massa a pretium suscipit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Aliquam lectus nisi, consequat sit amet mauris
-                            vitae, malesuada finibus augue. Donec imperdiet nunc
-                            nisi, nec feugiat ipsum sollicitudin non. Nulla in
-                            faucibus sapien, sed sodales nibh. In et vestibulum
-                            metus. Vivamus mollis massa a pretium suscipit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Aliquam lectus nisi, consequat sit amet mauris
-                            vitae, malesuada finibus augue. Donec imperdiet nunc
-                            nisi, nec feugiat ipsum sollicitudin non. Nulla in
-                            faucibus sapien, sed sodales nibh. In et vestibulum
-                            metus. Vivamus mollis massa a pretium suscipit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
+                            A Funerária Bom Jardim nasceu com a missão de cuidar
+                            das famílias no momento mais difícil: a despedida
+                            final. Estamos presentes para oferecer assistência
+                            completa e assegurar que nossos serviços sejam
+                            prestados com excelência. Somos a melhor assistência
+                            funerária da região, oferecendo planos acessíveis
+                            para todos os públicos. Entendemos que, nos momentos
+                            de luto, o que você mais deseja é acolhimento e
+                            suporte. Aqui, na Bom Jardim, garantimos isso para
+                            você e sua família, proporcionando tranquilidade e
+                            paz.
                         </p>
                     </div>
                 </div>
@@ -147,7 +154,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Assistência 24 horas"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Profissionais à sua disposição, prontos para atender integralmente a qualquer hora."
                             icon="./icons/24-hr-assistence.png"
                         />
                     </Col>
@@ -155,7 +162,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Velório completo"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Seu ente querido receberá uma despedida digna, conduzida com todo cuidado e amor."
                             icon="./icons/complete-funeral.png"
                         />
                     </Col>
@@ -163,7 +170,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Salas de velório"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Ambiente físico confortável e acolhedor para a sua família, amigos e parentes."
                             icon="./icons/funeral-rooms.png"
                         />
                     </Col>
@@ -171,7 +178,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Seriedade e empatia"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Estamos ao seu lado neste momento de dor, oferecendo cuidado e um ombro amigo."
                             icon="./icons/seriousness-and-empathy.png"
                         />
                     </Col>
@@ -179,7 +186,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Preços especiais"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Condições acessíveis e variadas, com serviços inclusos para atender suas necessidades."
                             icon="./icons/special-prices.png"
                         />
                     </Col>
@@ -187,7 +194,7 @@ export function Home() {
                     <Col className="mb-4" lg={4} sm={12}>
                         <BenefitCard
                             title="Translado até 400km"
-                            description="Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Aliquam lectus"
+                            description="Serviço de transporte ágil e profissional, garantindo segurança e respeito."
                             icon="./icons/far-away.png"
                         />
                     </Col>
@@ -232,78 +239,29 @@ export function Home() {
                     <FormattedInput
                         type="search"
                         placeholder="Busque pelo nome da sua cidade"
+                        onChange={(event) => setSearch(event.target.value)}
                     />
                 </div>
 
                 <Row className="m-0 px-5">
-                    <Col lg={3} className="mb-4">
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3} className="mb-4">
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3} className="mb-4">
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3} className="mb-4">
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3}>
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3}>
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3}>
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
-
-                    <Col lg={3}>
-                        <ServicesCard
-                            title="Floricultura"
-                            description="Lorem Ipsum"
-                            icon="./floricultura.png"
-                        />
-                    </Col>
+                    {limitedAddresses.map((address) => (
+                        <Col lg={3} className="mb-4 d-flex">
+                            <ServicesCard
+                                isMap
+                                title={address.title}
+                                description={address.description}
+                                phoneNumber={address.phoneNumber}
+                            />
+                        </Col>
+                    ))}
                 </Row>
 
                 <div className="text-center mt-4">
-                    <button className="btn btn-bg-purple-text-light px-5">
-                        Ver todos
+                    <button
+                        className="btn btn-bg-purple-text-light px-5"
+                        onClick={() => setSeeAllAddress(!seeAllAddress)}
+                    >
+                        {seeAllAddress ? "Ver menos" : "Ver todos"}
                     </button>
                 </div>
             </div>

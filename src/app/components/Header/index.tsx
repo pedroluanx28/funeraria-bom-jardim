@@ -1,4 +1,5 @@
 import { isMobile } from "react-device-detect";
+import { useNavigate } from "react-router-dom";
 
 import classNames from "clsx";
 import Swal from "sweetalert2";
@@ -8,7 +9,6 @@ import { FaFacebook } from "react-icons/fa";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 
 import { HeaderItem } from "@/components/HeaderItem";
-import { useNavigate } from "react-router-dom";
 
 export function Header() {
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ export function Header() {
         >
             <div className="d-flex align-items-center gap-4">
                 <img
-                    src="./logo.png"
+                    src="/funeraria-bom-jardim/logo.png"
                     alt="Logo"
                     className="logo"
                     style={{ width: isMobile ? "6rem" : "8rem" }}
@@ -48,7 +48,7 @@ export function Header() {
                 {!isMobile && (
                     <>
                         <HeaderItem title="Home" to="/home" />
-                        <HeaderItem title="Produtos" to="/produtos" />
+                        {/* <HeaderItem title="Produtos" to="/produtos" /> */}
                         <HeaderItem title="Planos" to="/planos" />
                         <HeaderItem
                             title="Velório online"

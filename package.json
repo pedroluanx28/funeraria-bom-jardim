@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@types/node": "^22.8.4",
+    "@types/react-leaflet": "^3.0.0",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
