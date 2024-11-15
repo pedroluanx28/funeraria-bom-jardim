@@ -10,6 +10,8 @@ import { BiLogoInstagramAlt } from "react-icons/bi";
 
 import { HeaderItem } from "@/components/HeaderItem";
 
+import Logo from "@assets/logo.png";
+
 export function Header() {
     const navigate = useNavigate();
 
@@ -39,7 +41,7 @@ export function Header() {
         >
             <div className="d-flex align-items-center gap-4">
                 <img
-                    src="/funeraria-bom-jardim/logo.png"
+                    src={Logo}
                     alt="Logo"
                     className="logo"
                     style={{ width: isMobile ? "6rem" : "8rem" }}

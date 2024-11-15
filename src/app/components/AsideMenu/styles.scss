@@ -1,0 +1,22 @@
+.aside-menu {
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.aside-menu-close {
+    margin-left: -20vw;
+}
+
+.aside-menu-item {
+    color: #fff;
+
+    &:hover {
+        background-color: #fff;
+        color: #2287d4;
+    }
+}
+
+.aside-menu-item-active {
+    background-color: #fff;
+    color: #2287d4;
+}

@@ -2,9 +2,11 @@ import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
-
 import Modal from "react-bootstrap/Modal";
+
 import { FormattedInput } from "../Formattedinput";
+
+import Logo from "@assets/logo.png";
 
 type ModalProps = {
     show: boolean;
@@ -36,7 +38,7 @@ export function OnlineFuneralPassword({ show, handleClose }: ModalProps) {
     return (
         <Modal show={show} onHide={handleClose} centered>
             <Modal.Body className="text-center px-5 py-4">
-                <img src="./logo.png" alt="Logo Bom Jardim" className="mb-3" />
+                <img src={Logo} alt="Logo Bom Jardim" className="mb-3" />
 
                 <h4>Acesso restrito</h4>
 

@@ -5,6 +5,12 @@ $lightPurple: #4d6ef3;
 $gray: #ececee;
 $lightGray: #f6f6f687;
 $oceanBlue: #008ffb;
+$success: #07e99a;
+$lightBlue: #0a76c8;
+$background: #f5f7f9;
+$configurationsPurple: #2e57fb;
+$configurationsBlue: #2287d4;
+$tableGray: #676666;
 
 :root {
     --purple: #1c49ff;
@@ -34,12 +40,36 @@ $oceanBlue: #008ffb;
     color: $lightPurple;
 }
 
+.text-light-blue {
+    color: $lightBlue;
+}
+
+.text-configurations-blue {
+    color: $configurationsBlue;
+}
+
+.text-table-gray {
+    color: $tableGray;
+}
+
 .bg-gray {
     background-color: $gray;
 }
 
+.bg-table-gray {
+    background-color: $tableGray;
+}
+
 .bg-light-gray {
     background-color: $lightGray;
+}
+
+.bg-background {
+    background-color: $background;
+}
+
+.bg-configurations-purple {
+    background-color: $configurationsPurple;
 }
 
 // fonts
@@ -83,7 +113,7 @@ $oceanBlue: #008ffb;
     font-size: 0.9rem;
 }
 
-.fs-1rem {
+.fs-078rem {
     font-size: 0.78rem;
 }
 
@@ -165,6 +195,14 @@ $oceanBlue: #008ffb;
     width: 4rem;
 }
 
+.w-18 {
+    width: 20vw;
+}
+
+.w-6-5rem {
+    width: 6.5rem;
+}
+
 // others
 .default-link {
     text-decoration: none;
@@ -214,4 +252,32 @@ th {
 
 .gray-button {
     background-color: #e1e3ea !important;
+    color: $tableGray;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: $success;
+    color: #fff;
+}
+
+.table-row-dashed {
+    thead {
+        th {
+            border-bottom: 0px !important;
+        }
+    }
+
+    tbody {
+        td {
+            border-top: 1px dashed #e2e2e2 !important;
+            border-bottom: 0 !important;
+        }
+    }
 }

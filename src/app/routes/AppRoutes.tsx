@@ -12,19 +12,19 @@ export function AppRoutes() {
     return (
         <BrowserRouter basename="/funeraria-bom-jardim">
             <Routes>
-                <Route path="/" element={<Navigate to="/home" />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/produtos" element={<Contact />} />
-                <Route path="/planos" element={<Plans />} />
+                <Route path="/*" element={<Navigate to="/home" />} />
+                <Route path="home" element={<Home />} />
+                <Route path="produtos" element={<Contact />} />
+                <Route path="planos" element={<Plans />} />
                 <Route
-                    path="/velorio-online/*"
+                    path="velorio-online/*"
                     element={<OnlineFuneralRoutes />}
                 />
                 <Route
-                    path="/gerenciamento/*"
+                    path="gerenciamento/*"
                     element={<ConfigurationRoutes />}
                 />
-                <Route path="/login" element={<Login />} />
+                <Route path="login" element={<Login />} />
             </Routes>
         </BrowserRouter>
     );

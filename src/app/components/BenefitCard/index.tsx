@@ -15,7 +15,7 @@ export function BenefitCard({ title, description, icon }: BenefitCardProps) {
 
             <div className="text-start d-flex flex-column gap-1">
                 <h6 className="m-0 fw-bold">{title}</h6>
-                <p className="m-0 fs-1rem">{description}</p>
+                <p className="m-0 fs-078rem">{description}</p>
             </div>
         </div>
     );

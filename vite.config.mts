@@ -17,6 +17,10 @@ export default defineConfig({
                 find: /^~(.*)$/,
                 replacement: "$1",
             },
+            {
+                find: "@assets",
+                replacement: path.resolve("./src/assets"),
+            },
         ],
     },
     base: "/funeraria-bom-jardim",

@@ -18,6 +18,23 @@ import { BenefitCard } from "@/components/BenefitCard";
 import { ServicesCard } from "@/components/ServicesCard";
 import { FormattedInput } from "@/components/Formattedinput";
 
+import Office from "@assets/office.png";
+import BomjardimBackground from "@assets/bom-jardim-background.png";
+import FuneralPlan from "@assets/funeral-plan.png";
+import MobileBackground from "@assets/mobile-background.png";
+import Background from "@assets/background.png";
+import IconBomJardim from "@assets/icons/bom-jardim.png";
+import IconHandHeart from "@assets/icons/hand-heart.png";
+import IconServices from "@assets/icons/services.png";
+import IconPark from "@assets/icons/park.png";
+import Icon24HrAssistence from "@assets/icons/24-hr-assistence.png";
+import IconCompleteFuneral from "@assets/icons/complete-funeral.png";
+import IconFuneralRooms from "@assets/icons/funeral-rooms.png";
+import IconSeriousnessAndEmpathy from "@assets/icons/seriousness-and-empathy.png";
+import IconSpecialPrices from "@assets/icons/special-prices.png";
+import IconFarAway from "@assets/icons/far-away.png";
+import Floricultura from "@assets/floricultura.png";
+
 import "./styles.scss";
 
 export function Home() {
@@ -29,9 +46,7 @@ export function Home() {
     const limitedAddresses = seeAllAddress ? addresses : addresses.slice(0, 8);
 
     const backgroundContainerStyle = {
-        backgroundImage: `url(${
-            isMobile ? "./mobile-background.png" : "./background.png"
-        })`,
+        backgroundImage: `url(${isMobile ? MobileBackground : Background})`,
     };
 
     return (
@@ -68,7 +83,7 @@ export function Home() {
                 <Row className={classNames({ "gap-4": isMobile })}>
                     <Col className="d-flex" lg={3} sm={12}>
                         <Card
-                            icon="./icons/bom-jardim.png"
+                            icon={IconBomJardim}
                             title="Nossos serviçoes"
                             description="Conheça a trajetória da nossa funerária e nossos serviços e valores"
                             buttonText="Saiba mais"
@@ -77,7 +92,7 @@ export function Home() {
 
                     <Col className="d-flex" lg={3} sm={12}>
                         <Card
-                            icon="./icons/hand-heart.png"
+                            icon={IconHandHeart}
                             title="Confira nossos planos"
                             description="Descubra o plano que melhor atende às suas necessidades e da sua família"
                             buttonText="Saiba mais"
@@ -86,7 +101,7 @@ export function Home() {
 
                     <Col className="d-flex" lg={3} sm={12}>
                         <Card
-                            icon="./icons/services.png"
+                            icon={IconServices}
                             title="Serviços oferecidos"
                             description="Veja todos os serviços que oferecemos para ajudar você e sua família."
                             buttonText="Saiba mais"
@@ -95,7 +110,7 @@ export function Home() {
 
                     <Col className="d-flex" lg={3} sm={12}>
                         <Card
-                            icon="./icons/park.png"
+                            icon={IconPark}
                             title="Onde nos encontrar?"
                             description="Saiba onde estamos localizados e encontre a mais próxima de você."
                             buttonText="Saiba mais"
@@ -113,7 +128,7 @@ export function Home() {
 
                 <div className="d-flex align-items-center justify-content-evenly px-5">
                     <img
-                        src="./office.png"
+                        src={Office}
                         alt="Bom jardim office"
                         className="w-31rem"
                     />
@@ -155,7 +170,7 @@ export function Home() {
                         <BenefitCard
                             title="Assistência 24 horas"
                             description="Profissionais à sua disposição, prontos para atender integralmente a qualquer hora."
-                            icon="./icons/24-hr-assistence.png"
+                            icon={Icon24HrAssistence}
                         />
                     </Col>
 
@@ -163,7 +178,7 @@ export function Home() {
                         <BenefitCard
                             title="Velório completo"
                             description="Seu ente querido receberá uma despedida digna, conduzida com todo cuidado e amor."
-                            icon="./icons/complete-funeral.png"
+                            icon={IconCompleteFuneral}
                         />
                     </Col>
 
@@ -171,7 +186,7 @@ export function Home() {
                         <BenefitCard
                             title="Salas de velório"
                             description="Ambiente físico confortável e acolhedor para a sua família, amigos e parentes."
-                            icon="./icons/funeral-rooms.png"
+                            icon={IconFuneralRooms}
                         />
                     </Col>
 
@@ -179,7 +194,7 @@ export function Home() {
                         <BenefitCard
                             title="Seriedade e empatia"
                             description="Estamos ao seu lado neste momento de dor, oferecendo cuidado e um ombro amigo."
-                            icon="./icons/seriousness-and-empathy.png"
+                            icon={IconSeriousnessAndEmpathy}
                         />
                     </Col>
 
@@ -187,7 +202,7 @@ export function Home() {
                         <BenefitCard
                             title="Preços especiais"
                             description="Condições acessíveis e variadas, com serviços inclusos para atender suas necessidades."
-                            icon="./icons/special-prices.png"
+                            icon={IconSpecialPrices}
                         />
                     </Col>
 
@@ -195,7 +210,7 @@ export function Home() {
                         <BenefitCard
                             title="Translado até 400km"
                             description="Serviço de transporte ágil e profissional, garantindo segurança e respeito."
-                            icon="./icons/far-away.png"
+                            icon={IconFarAway}
                         />
                     </Col>
                 </Row>
@@ -211,7 +226,7 @@ export function Home() {
                         <ServicesCard
                             title="Floricultura"
                             description="Lorem Ipsum"
-                            icon="./floricultura.png"
+                            icon={Floricultura}
                         />
                     </Col>
                 </Row>
@@ -219,7 +234,7 @@ export function Home() {
 
             <div className="position-relative pt-6 mb-6">
                 <img
-                    src="./bom-jardim-background.png"
+                    src={BomjardimBackground}
                     alt="Fundo logo Bom Jardim"
                     className="w-100 position-absolute top-0 z-index-negative"
                 />
@@ -268,7 +283,7 @@ export function Home() {
 
             <div className="px-5 mb-5">
                 <img
-                    src="./funeral-plan.png"
+                    src={FuneralPlan}
                     alt="Plano funerário"
                     className="w-100 rounded"
                 />

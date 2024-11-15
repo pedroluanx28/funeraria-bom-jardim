@@ -15,7 +15,8 @@
         /* aliases */
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/app/*", ""]
+            "@/*": ["./src/app/*", ""],
+            "@assets/*": ["./src/assets/*", ""]
         }
     },
     "include": ["src"],

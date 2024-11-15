@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-
 import { FaPhoneAlt } from "react-icons/fa";
+
+import Map from "@assets/map.png";
 
 type ServicesCardProps = {
     title: string;
@@ -17,16 +17,10 @@ export function ServicesCard({
     isMap,
     phoneNumber,
 }: ServicesCardProps) {
-    const formattedPhoneNumber = phoneNumber?.replace(/[^\d]/g, "");
-
     return (
         <div className="card-shadow p-3 d-flex flex-column gap-2 rounded bg-white text-center">
             {isMap ? (
-                <img
-                    src="./map.png"
-                    alt="Mapa de referência"
-                    className="w-100"
-                />
+                <img src={Map} alt="Mapa de referência" className="w-100" />
             ) : (
                 <img
                     src={icon}

@@ -8,6 +8,11 @@ import { Header } from "@/components/Header";
 import { Card } from "@/components/Card";
 import { Footer } from "@/components/Footer";
 
+import OnlineFuneralBackground from "@assets/online-funeral-background.png";
+import IconAccessibility from "@assets/icons/accessibility.png";
+import IconUserLock from "@assets/icons/user-lock.png";
+import IconPlayFuneral from "@assets/icons/play-funeral.png";
+
 import "./styles.scss";
 
 export function OnlineFuneral() {
@@ -19,7 +24,7 @@ export function OnlineFuneral() {
                 <Header />
 
                 <img
-                    src="./online-funeral-background.png"
+                    src={OnlineFuneralBackground}
                     alt="Velório online fundo"
                     className="online-funeral-background"
                 />
@@ -42,7 +47,7 @@ export function OnlineFuneral() {
                             <Card
                                 title="Acompanhe aonde estiver"
                                 description="Permita-se estar presente, mesmo à distância. Nosso serviço de velório online oferece a possibilidade de acompanhar a despedida de um ente querido, seja qual for sua localização."
-                                icon="./icons/accessibility.png"
+                                icon={IconAccessibility}
                             />
                         </Col>
 
@@ -50,7 +55,7 @@ export function OnlineFuneral() {
                             <Card
                                 title="Privacidade e Respeito"
                                 description="Respeitamos profundamente a intimidade deste momento. Por isso, o acesso à transmissão é protegido por uma senha exclusiva, fornecida pela família."
-                                icon="./icons/user-lock.png"
+                                icon={IconUserLock}
                             />
                         </Col>
 
@@ -58,7 +63,7 @@ export function OnlineFuneral() {
                             <Card
                                 title="Como acessar a cerimônia"
                                 description="Para acessar o velório, clique no botão abaixo e insira a senha exclusiva fornecida. Caso tenha dificuldades, nossa equipe está disponível para ajuda."
-                                icon="./icons/play-funeral.png"
+                                icon={IconPlayFuneral}
                             />
                         </Col>
                     </Row>

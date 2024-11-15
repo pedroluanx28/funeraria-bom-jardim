@@ -1,10 +1,13 @@
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 import { version } from "../../../version.ts";
 import { FormattedInput } from "@/components/Formattedinput";
 
+import Logo from "@assets/logo.png";
+import LoginBackground from "@assets/login-background.png";
+
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
 
 export function Login() {
     const navigate = useNavigate();
@@ -23,14 +26,14 @@ export function Login() {
     return (
         <div className="d-flex align-items-center justify-content-center h-100vh">
             <img
-                src="/login-background.png"
+                src={LoginBackground}
                 alt="Login background"
                 className="login-background"
             />
 
             <div className="bg-white card-shadow d-flex flex-column gap-3 login-content p-5 rounded">
                 <div className="text-center">
-                    <img src="/logo.png" alt="Logo Bom jardim" />
+                    <img src={Logo} alt="Logo Bom jardim" />
                 </div>
 
                 <h4 className="text-center">Login</h4>

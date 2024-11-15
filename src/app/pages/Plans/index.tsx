@@ -1,10 +1,19 @@
+import { Link } from "react-router-dom";
+
 import Table from "react-bootstrap/Table";
 
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+
+import PlansBackground from "@assets/plans-background.png";
+import Basico from "@assets/basico.png";
+import Master from "@assets/master.png";
+import Plus from "@assets/plus.png";
+import Cremax from "@assets/cremax.png";
+import Premiun from "@assets/premiun.png";
+import MiniCesta from "@assets/mini-cesta.png";
 
 import "./styles.scss";
-import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
 
 export function Plans() {
     return (
@@ -13,7 +22,7 @@ export function Plans() {
                 <Header />
 
                 <img
-                    src="./plans-background.png"
+                    src={PlansBackground}
                     alt="Planos fundo"
                     className="plans-background"
                 />
@@ -94,27 +103,31 @@ export function Plans() {
 
             <div className="d-flex flex-column gap-5 align-items-center mb-6">
                 <Link to="https://wa.me/5585992578160" target="_blank">
-                    <img src="./basico.png" />
+                    <img src={Basico} alt="Plano básico" />
                 </Link>
 
                 <Link to="https://wa.me/5585992578160" target="_blank">
-                    <img src="./master.png" />
+                    <img src={Master} alt="Plano master" />
                 </Link>
 
                 <Link to="https://wa.me/5585992578160" target="_blank">
-                    <img src="./plus.png" />
+                    <img src={Plus} alt="Plano plus" />
                 </Link>
 
                 <Link to="https://wa.me/5585992578160" target="_blank">
-                    <img src="./cremax.png" />
+                    <img src={Cremax} alt="Plano cremax" />
                 </Link>
 
                 <Link to="https://wa.me/5585992578160" target="_blank">
-                    <img src="./premiun.png" />
+                    <img src={Premiun} alt="Plano premiun" />
                 </Link>
             </div>
 
-            <img src="./mini-cesta.png" className="w-100 mb-6" />
+            <img
+                src={MiniCesta}
+                className="w-100 mb-6"
+                alt="Mini cesta de alimentos"
+            />
 
             <Footer />
         </>
